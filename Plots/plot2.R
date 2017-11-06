@@ -1,0 +1,7 @@
+source("getData.R")
+electricData <- getData()
+dateTime <- strptime(paste(electricData$Date,electricData$Time),format = "%d/%m/%Y %H:%M:%S")
+globalActivePower <- as.numeric(electricData$Global_active_power)
+png(filename = "plot2.png")
+plot(dateTime,globalActivePower,type = "l",ylab="Global Active Power(kilwatts)")
+graphics.off()

@@ -1,0 +1,7 @@
+source("getData.R")
+electricData <- getData()
+png(filename = "plot1.png")
+globalActivePower <- as.numeric(electricData$Global_active_power)
+hist(globalActivePower,col="red",main = "Global Active Power",xlab = "Global Active Power(kilwatts)")
+graphics.off()
+#plot(x = electricData$Date, y = electricData$Global_active_power,col())
